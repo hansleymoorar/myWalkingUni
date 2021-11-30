@@ -1,0 +1,28 @@
+.mainTitle {
+    font-family: 'Permanent Marker', cursive;
+    font-size: medium;
+    font-weight: 900;
+
+}
+
+.uniTitle {
+    font-family: 'Dancing Script', cursive;
+    font-size: small;
+    font-weight: 500;
+
+}
+
+.main {
+    margin: 1rem;
+}
+
+.texts {
+    font-family: 'Acme', sans-serif;
+    font-weight: 600;
+}
+
+.center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
