@@ -1,6 +1,6 @@
 .mainTitle {
     font-family: 'Permanent Marker', cursive;
-    font-size: medium;
+    font-size: large;
     font-weight: 900;
 
 }
@@ -19,6 +19,14 @@
 .texts {
     font-family: 'Acme', sans-serif;
     font-weight: 600;
+    border-radius: 4px;
+
+
+}
+
+.texts2 {
+    width: auto;
+
 }
 
 .center {

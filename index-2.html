@@ -8,11 +8,14 @@
 
     <link rel="stylesheet" href="themes/Bootstrap.css">
     <link rel="stylesheet" href="js/jquery.mobile-1.4.5.css">
+    <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" integrity="sha512-tS3S5qG0BlhnQROyJXvNjeEM4UpMXHrQfTGmbQ1gKmelCxlSEBUaxhRBj/EFTzpbP4RVSrpEikbmdJobCvhE3g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css" integrity="sha512-sMXtMNL1zRzolHYKEujM2AqCLUR9F2C4/05cdbxjjLSRvMQIciEPCQZo++nk7go3BtSuK9kfa/s+a4f4i5pLkw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
     <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
-    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.25/css/jquery.dataTables.min.css" />
+    <script type="text/javascript" src="https://cdn.datatables.net/v/dt/dt-1.10.25/datatables.min.js" />
+    
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -21,7 +24,9 @@
     <script src="js/jquery.js"></script>
     <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
     <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>    
-    <script type="text/javascript" src="cordova.js"></script>
+    <script type="text/javascript" src="cordova.js"></script>    
+      
+   
 
 </head>
 <body>
@@ -37,8 +42,8 @@
             <h1> </h1>
             <div data-role="navbar">
                 <ul>
-                    <li><a href="#pageone" data-icon="home" class="ui-btn-active ui-state-persist texts">Home</a></li>
-                    <li><a href="#popupMenua" data-rel="popup" class="texts" data-transition="slideup" data-icon="lock">Login</a></li>
+                    <li><a href="#pageone" data-icon="home" class="ui-btn-active ui-state-persist texts" data-theme="e">Home</a></li>
+                    <li><a href="#popupMenua" data-rel="popup" class="texts" data-transition="slideup" data-icon="lock" data-theme="e">Login</a></li>
                 </ul>
             </div>
             
@@ -67,21 +72,23 @@
             <hr>
 
             <!--add style="display: none;"-->
-            <div data-role="navbar">
+            <div data-role="navbar" class="col-md-6">
                 <ul>
-                    <li><a href="#forumPage" data-icon="" class="texts">Forum</a></li>
+                    <li><a href="#forumPage" class="texts texts2" data-theme="b" data-icon="comment">Forum</a></li>
+                    <li><a href="#nePage" data-icon="info" class="texts texts2" data-transition="slide" data-theme="b">News & Events</a></li>
+                    <li><a href="#vaccinPage" data-icon="user" class="texts texts2" data-theme="b">Vaccination Pass</a></li>
                 </ul>
+            </div>
+            <div data-role="navbar" class="center">
                 <ul>
-                    <li><a href="#nePage" data-icon="" class="texts" data-transition="slide">News & Events</a></li>
-                </ul>
-                <ul>
-                    <li><a href="#vaccinPage" data-icon="" class="texts">Vaccination Pass</a></li>
+                    <br>
+                    <li><a href="#LocaPage" data-icon="location" style="width: 200px;" class="texts texts2" data-theme="d">Location</a></li>
                 </ul>
             </div>
         </div>
        
         <!--listitem-->
-        <div data-role="popup" id="popupMenua" data-theme="c">
+        <div data-role="popup" id="popupMenua" data-theme="e">
             <ul data-role="listview" data-inset="true" style="min-width:210px;">
                 <li data-role="list-divider">Choose an action</li>
                 <li><a href="#adminlogin" class="texts">Admin Login</a></li>
@@ -90,7 +97,7 @@
         </div>
         
         <!--footer page one-->
-        <div data-role="footer">
+        <div data-role="footer" data-theme="e">
             <h1>copyright c | M.Y.H</h1>
         </div>
     </div>
@@ -99,7 +106,7 @@
 
     <!--##------------------------------------------------------FORUM PAGE STARTS---------------------------------------------------------------------------------##-->
 
-    <div data-role="page" id="forumPage" data-dialog="true" >
+    <div data-role="page" id="forumPage" data-dialog="true">
 
         <!--header/navbar-->
         <div data-role="header">
@@ -121,7 +128,7 @@
 
         
         <!--footer page one-->
-        <div data-role="footer">
+        <div data-role="footer" data-theme="e">
             <h1>copyright c | M.Y.H</h1>
         </div>
     </div>
@@ -131,14 +138,12 @@
     <!--##------------------------------------------------------N&E PAGE STARTS---------------------------------------------------------------------------------##-->
 
     <div data-role="page" id="nePage">
-
   <!--header/navbar-->
         <div data-role="header">
             <div class="row">
                 <div class="col-md-4 jumbo">
                     <h1><span class="mainTitle center">My Walking Uni</span><span class="uniTitle center Dancing">The University of Technology, Mauritius App</span></h1>
               </div>
-            <h1> </h1>
             <div data-role="navbar">
                 <ul>
                     <li><a href="#pageone" data-icon="home" class="ui-btn-active ui-state-persist texts">Home</a></li>
@@ -148,21 +153,27 @@
             
         </div>
         <div data-role="main" class="ui-content">
-
-            <!--main content-->
-            <div class="owl-carousel owl-theme">
-                <div class="item">
-                    <img src="img/2.jpg" alt="">
-                </div>
-                <div class="item">
-                    <img src="img/3.jpeg" alt="">
-                </div>
-            </div>
-            <hr>
+        <div class="center">
+            <img src="./img/news-alert.png" alt="" width="130px">
         </div>
+            <!--main content-->
+            <table id="table_id" class="display">
+                <thead>
+                    <th>School</th>
+                    <th>Type</th>
+                    <th>Content</th>
+                    <th>Date</th>
+                    <th>Venue</th>
+    
+    
+                </thead>
+                <tbody id="table-data">
+    
+                </tbody>
+            </table>
        
         <!--listitem-->
-        <div data-role="popup" id="popupMenua" data-theme="c">
+        <div data-role="popup" id="popupMenua" data-theme="e">
             <ul data-role="listview" data-inset="true" style="min-width:210px;">
                 <li data-role="list-divider">Choose an action</li>
                 <li><a href="#adminlogin" class="texts">Admin Login</a></li>
@@ -174,6 +185,7 @@
         <div data-role="footer" data-theme="e">
             <h1>copyright c | M.Y.H</h1>
         </div>
+    </div>
     </div>
     </div>
     <!--##------------------------------------------------------N&E PAGE ENDS---------------------------------------------------------------------------------##-->
@@ -199,19 +211,148 @@
     
             
             <!--footer page one-->
-            <div data-role="footer">
+            <div data-role="footer" data-theme="e">
                 <h1>copyright c | M.Y.H</h1>
             </div>
         </div>
         </div>
     <!--##------------------------------------------------------VACCINATION PAGE ENDS---------------------------------------------------------------------------------##-->
+    
+
+<!--##------------------------------------------------------LOCATION PAGE STARTS---------------------------------------------------------------------------------##-->
+
+<div data-role="page" id="LocaPage">
+
+    <!--header/navbar-->
+          <div data-role="header">
+              <div class="row">
+                  <div class="col-md-4 jumbo">
+                      <h1><span class="mainTitle center">My Walking Uni</span><span class="uniTitle center Dancing">The University of Technology, Mauritius App</span></h1>
+                </div>
+              <h1> </h1>
+              <div data-role="navbar">
+                  <ul>
+                      <li><a href="#pageone" data-icon="home" class="ui-btn-active ui-state-persist texts" data-theme="e">Home</a></li>
+                  </ul>
+              </div>
+              
+              
+          </div>
+          <div data-role="main" class="ui-content">
+  
+              <!--main content-->
+              
+
+                <div class="info-content">
+                    <div class="info-img">
+                        <img src="./img/location.png" style="height:20%;width: 20%;" alt="" data-theme="d">
+                        <button id="locateUs">Locate Us</button>
+                    </div>
+                    <aside>
+                        <p>The University of Technology, Mauritius (UTM) was created in year 2000 by Act of Parliament as
+                            the Government implemented its plan to have a second University which would focus towards
+                            development of oriented sectors in particular. This historic step in the field of higher
+                            education was prompted mainly by the need to cater more vigorously for the increasing demand for
+                            ICT and Management professionals in a country which is seriously committed to accelerate, by all
+                            means, the realization of its ambition to become a major service provider in the field of
+                            Information Technology, Management and Finance, Sustainable Development and allied areas.</p>
+                    </aside>
+    
+                </div>
+    
+                <div id="map" style="height:180px;"></div>
+    
+    
+            
+          <!--listitem-->
+          <div data-role="popup" id="popupMenua" data-theme="e">
+              <ul data-role="listview" data-inset="true" style="min-width:210px;">
+                  <li data-role="list-divider">Choose an action</li>
+                  <li><a href="#adminlogin" class="texts">Admin Login</a></li>
+                  <li><a href="#studentlogin" class="texts">Student Login</a></li>
+              </ul>
+          </div>
+          
+          <!--footer page one-->
+          <div data-role="footer" data-theme="e">
+              <h1>copyright c | M.Y.H</h1>
+          </div>
+      </div>
+      </div>
+      </div>
+      <!--##------------------------------------------------------LOCATION PAGE ENDS---------------------------------------------------------------------------------##-->
+
+
+    <!--##------------------------------------------------------ADMIN EVENT AND NEWS PAGE STARTS---------------------------------------------------------------------------------##-->
+
+    <div data-role="page" id="AdnePage" >
+
+     <!--header/navbar-->
+     <div data-role="header">
+        <div class="row">
+            <div class="col-md-4 jumbo">
+                <h1><span class="mainTitle center">My Walking Uni</span><span class="uniTitle center Dancing">The University of Technology, Mauritius App</span></h1>
+          </div>
+        <h1> </h1>
+        <div data-role="navbar">
+            <ul>
+                <li><a href="#pageone" data-icon="home" class="ui-btn-active ui-state-persist texts" data-theme="e">Home</a></li>
+            </ul>
+        </div>
+        
+        
+    </div>
+    <div data-role="main" class="ui-content">
+
+        <!--main content-->
+        <form>
+            <label class="ui-hidden-accessible" ></label>
+            <input name="event" type="text" placeholder="School" />
+            <label class="ui-hidden-accessible"></label>
+            <input name="detailE" type="text" placeholder="Type" />
+            <label class="ui-hidden-accessible"></label>
+            <input name="detailE" type="text" placeholder="Content" />
+            <label class="ui-hidden-accessible"></label>
+            <input name="dates" type="date" placeholder="date" />
+            <label class="ui-hidden-accessible"></label>
+            <input name="detailE" type="text" placeholder="Venue" />
+            <input type="submit" value="Post Event" onclick="insertEvent()" data-theme="e"/>
+    
+    
+        </form>
+
+
+     
+   
+    <!--listitem-->
+    <div data-role="popup" id="popupMenua" data-theme="e">
+        <ul data-role="listview" data-inset="true" style="min-width:210px;">
+            <li data-role="list-divider">Choose an action</li>
+            <li><a href="#adminlogin" class="texts">Admin Login</a></li>
+            <li><a href="#studentlogin" class="texts">Student Login</a></li>
+        </ul>
+    </div>
+    
+    <!--footer page one-->
+    <div data-role="footer" data-theme="e">
+        <h1>copyright c | M.Y.H</h1>
+    </div>
+</div>
+</div>
+</div>
+
+<!--##------------------------------------------------------ADMIN NEWS AND EVENTS PAGE ENDS---------------------------------------------------------------------------------##-->
+
+
+
+
 
     <!--##------------------------------------------------------ADMIN LOGIN STARTS---------------------------------------------------------------------------------##-->
      <!--page four for login-->
      <div data-role="page" id="adminlogin"  data-dialog="true">
 
         <!--header/navbar-->
-        <div data-role="header" data-theme="b">
+        <div data-role="header" data-theme="e">
             <h1>Admin Login</h1>
         </div>
         <!--end of navbar-->
@@ -221,13 +362,13 @@
             <form method="post" onSubmit="return">
                 <label class="ui-hidden-accessible">Username</label><input name="username" type="text" placeholder="Username"/>
                 <label class="ui-hidden-accessible">Password</label><input name="password" type="password" placeholder="Password"/>
-                <input type="submit" value="Login" onclick="loginForAdmin()"/>
+                <input type="submit" value="Login" onclick="loginForAdmin()" data-theme="b"/>
                 <label class="ui-hidden-accessible"></label>
               
                </form>
         </div>
         <!--footer page one-->
-        <div data-role="footer">
+        <div data-role="footer" data-theme="e">
             <h1>copyright c | M.Y.H</h1>
         </div>
     </div>
@@ -238,7 +379,7 @@
             <!--page six for Ulogin-->
     <div data-role="page" id="studentlogin"  data-dialog="true">
         <!--header/navbar-->
-        <div data-role="header" data-theme="b">
+        <div data-role="header" data-theme="e">
             <h1>Student Login</h1>
         </div>
         <!--end of navbar-->
@@ -248,13 +389,13 @@
             <form method="post" onSubmit="return">
                 <label class="ui-hidden-accessible">Email</label><input name="emailstudent" type="email" placeholder="Email Id"/>
                 <label class="ui-hidden-accessible">Password</label><input name="passwordstudent" type="password" placeholder="Password"/>
-                <input type="submit" value="login" onclick="studentsuccess()"/>
+                <input type="submit" value="login" onclick="studentsuccess()" data-theme="b"/>
                 <label class="ui-hidden-accessible"></label>
               
             </form>
         </div>
         <!--footer page one-->
-        <div data-role="footer">
+        <div data-role="footer" data-theme="e">
             <h1>copyright c | M.Y.H</h1>
         </div>
     </div>
@@ -271,6 +412,39 @@ owl.owlCarousel({
     autoplayTimeout:5000,
     autoplayHoverPause:true
 });
+
+
+var map;
+
+        function getMap() {
+            map = L.map('map', {
+                center: [-20.176282308095775, 57.467347903831296],
+                zoom: 13
+            });
+
+            var osm = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                attribution: '&copy; <a href="https://www.openstreetmap.org/copyright%22%3EOpenStreetMap</a> contributors'
+            })
+
+            osm.addTo(map);
+            //-20.176282308095775, 57.467347903831296
+            //var marker = L.marker([38.717333,-122.4113333]).addTo(map);
+            // var marker = L.marker([secondCoordinate,firstCoordinate]).addTo(map);
+        }
+        getMap();
+        let lat = -20.176282308095775;
+        let long = 57.467347903831296;
+
+        function addMarker(lat, long) {
+            var newMarker = L.marker([lat, long]).addTo(map);
+        }
+
+        $("#locateUs").click(function () {
+
+            addMarker(lat, long);
+            alert('Here We Are!');
+
+        });
     </script>
 </body>
 </html>
